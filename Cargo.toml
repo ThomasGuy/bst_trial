@@ -5,4 +5,4 @@ edition = "2024"
 
 [dependencies]
 anyhow = "1.0.103"
-bodium_core = { path = "../lib_bodium/core" }
+bodium_core = { version = "0.2.0", path = "/home/bo/sportny_26/rust/lib_bodium/core" }
