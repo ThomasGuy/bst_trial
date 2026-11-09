@@ -3,8 +3,8 @@ pub mod config;
 use crate::config::{Config, DataFormat};
 use anyhow;
 use bodium_core::data_containers::BinarySearchTree;
-use bodium_core::data_types::visualize;
-use bodium_core::data_types::{Point, Seeder};
+use bodium_core::data_types::Point;
+use bodium_core::utils::{Seeder, visualize_bst};
 use std::{env, process};
 
 fn main() {
@@ -46,7 +46,7 @@ pub fn run_pipeline(config: Config) -> anyhow::Result<()> {
                 println!("ID: {:<5} -> Coordinates: {}", key, value);
             }
 
-            visualize::draw_tree_graph("tree_view.png", &bst)?;
+            visualize_bst::draw_tree_graph("tree_view.png", &bst)?;
         }
 
         // --- BRANCH B: GEOMETRIC FORMAT PROCESSING TRACK ---
@@ -77,7 +77,7 @@ pub fn run_pipeline(config: Config) -> anyhow::Result<()> {
             //     println!("ID: {:<5} -> Coordinates: {}", node.key, node.val);
             // }
 
-            visualize::draw_tree_graph("tree_view.png", &bst)?;
+            visualize_bst::draw_tree_graph("tree_view.png", &bst)?;
         }
     }
 
